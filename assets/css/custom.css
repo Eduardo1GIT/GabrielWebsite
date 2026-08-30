@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Custom Styles - Overrides for Main Template
+   ========================================================================== */
+
+/* 1. Double the height of the intro-hero section */
+.box.intro-hero {
+    padding-top: 6em;
+    padding-bottom: 8em;
+}
+
+/* 2. Bigger letters for the main text to give it more presence */
+header.major .title-dynamic {
+    font-size: 3.5em;
+    line-height: 1.3em;
+}
+
+/* 3. Mobile responsiveness (keeps it readable on smaller screens) */
+@media screen and (max-width: 736px) {
+    .box.intro-hero {
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+    
+    header.major .title-dynamic {
+        font-size: 2.25em;
+    }
+}
+
+/* =========================================================
+   AUMENTO DE TAMAÑOS EN EL BANNER PRINCIPAL
+   ========================================================= */
+
+/* 1. Título "Cantante Solista" (Original era 3.5em) */
+#banner h2 {
+    font-size: 4.8em !important; 
+}
+
+/* 2. Etiqueta "100% VERSÁTIL" (Original era 0.85em) */
+.banner-badge-container .badge-pill {
+    font-size: 1.1em !important; 
+    padding: 0.5em 1.5em !important; /* Ajuste para mantener la forma de píldora */
+}
+
+/* 3. Texto principal "¡Hago de tu evento..." (Original era 1.5em) */
+#banner p.banner-highlight {
+    font-size: 2.2em !important; 
+}
+
+/* 4. Texto dorado animado "...algo inolvidable!" (Original era 1.35em) */
+#banner .banner-highlight .gold-sparkle {
+    font-size: 1.6em !important; 
+}
+
+/* 5. Subtítulo "Pasión, Energía & Elegancia" (Original era 0.95em) */
+.banner-badge-container .banner-subtag {
+    font-size: 1.3em !important; 
+}
+
+
+/* =========================================================
+   AJUSTES PARA CELULARES (Evita que el texto gigante se salga de la pantalla)
+   ========================================================= */
+@media screen and (max-width: 480px) {
+    #banner h2 {
+        font-size: 3.5em !important; /* Aumentado desde 1.8em */
+    }
+    
+    .banner-badge-container .badge-pill {
+        font-size: 0.9em !important; /* Aumentado desde 0.75em */
+    }
+    
+    #banner p.banner-highlight {
+        font-size: 1.4em !important; /* Aumentado desde 1.15em */
+    }
+    
+    #banner .banner-highlight .gold-sparkle {
+        font-size: 1.35em !important; /* Aumentado desde 1.25em */
+    }
+    
+    .banner-badge-container .banner-subtag {
+        font-size: 1em !important; /* Aumentado desde 0.75em */
+    }
+}
+
+
+
+
+
+/* 1. Ajuste del contenedor principal (Fondo negro) */
+body.landing #banner,
+body.is-touch #banner,
+#banner {
+    background-size: auto, 100% auto !important; 
+    background-position: top left, center center !important; 
+    
+    padding-top: 12em !important; 
+    /* Subimos drásticamente a 36em para vencer los 24em originales */
+    padding-bottom: 36em !important; 
+   background-color: #000000 !important;
+}
+
+/* 2. Empujar el botón hacia arriba para crear espacio simétrico abajo */
+#banner .actions {
+    margin-bottom: 8em !important; 
+}
+
+
+/* 3. Ajuste estricto para Celulares */
+@media screen and (max-width: 480px) {
+    body.landing #banner,
+    body.is-touch #banner,
+    #banner {
+        background-size: auto, contain !important;
+        background-position: top left, center center !important;
+        
+        padding-top: 6em !important;
+        padding-bottom: 12em !important; 
+    }
+    
+    /* El botón en celular empuja el borde hacia abajo */
+    #banner .actions {
+        margin-bottom: 6em !important; 
+    }
+}
+
+
+
+
+/* Asegurar que el video se adapte y tenga el mismo diseño que la foto original */
+.image.featured video {
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Efecto hover suave para el video igual que en la imagen */
+.image-interactive:hover video {
+    transform: scale(1.035);
+    filter: brightness(1.03);
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+}
+
+
+
+
+/* Contenedor especial aumentado */
+.box.special {
+    padding: 4rem 2rem; /* Más espacio interno para que el texto respire */
+    text-align: center;
+}
+
+/* Título Grande e Imponente */
+.box.special h3 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.5rem;       /* Tamaño gigante para un impacto inmediato */
+    font-weight: 800;         /* Letra extra gruesa (Ultra Bold) */
+    color: #444444;           /* Negro puro para máxima fuerza */
+    letter-spacing: -0.5px;   /* Letras ligeramente juntas para un look moderno de revista */
+    line-height: 1.2;         /* Evita que las líneas se separen demasiado */
+    margin-bottom: 1.5rem;    /* Espacio amplio con el párrafo */
+}
+
+/* Párrafo Legible, Grande y Elegante */
+.box.special p {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 1rem;       /* Tamaño de lectura premium, muy claro */
+    line-height: 1.8;         /* Interlineado amplio para que no se canse la vista */
+    font-weight: 400;         /* Grosor medio (Regular) para balancear el título */
+    color: #434345;           /* Gris oscuro elegante, más suave que el negro */
+    max-width: 800px;         /* Limita el ancho para que no se estire demasiado en pantallas grandes */
+    margin: 0 auto 2.5rem auto; /* Centra el párrafo y lo separa del botón */
+}
+
+/* El botón también necesita presencia para combinar */
+.box.special .button.alt {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+/* 1. Forzar a colapsar cualquier separación entre el Banner y el Main */
+/* ==========================================================================
+   Fijar Espacio Blanco Sobre el Video en la Landing Page
+   ========================================================================== */
+
+/* 1. Forzar al contenedor principal a subir por completo sin dejar aire */
+body.landing #main {
+    margin-top: -14em !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* 2. Quitar el fondo blanco, bordes y sombras de la tarjeta contenedora del video */
+body.landing #main > .container > .box:first-child,
+body.landing #main > .box:first-child,
+body.landing #main section:first-child {
+    margin-top: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 3. Ajustar el bloque interactivo del video para colapsar márgenes inline */
+body.landing .image-interactive {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    display: block !important;
+    background-color: #0b0b0e !important; /* Mismo negro que tu banner */
+}
+
+/* 4. Asegurar que el video ocupe el ancho completo de su bloque sin franjas */
+body.landing .image-interactive video {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 5. Ajuste estricto para resoluciones móviles y tablets */
+@media screen and (max-width: 980px) {
+    body.landing #main {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+body.generic-page {
+    background-color: #000000; 
+}
+
+	#banner.generic {
+		background-attachment: scroll, fixed;
+		background-color: #666;
+		background-image: url("/images/overlay.jpg"), url("../../images/galeria.png");
+		background-position: top left, center center;
+		background-repeat: repeat, no-repeat;
+		background-size: auto, cover;
+		color: #fff;
+		padding: 16em 0 24em 0;
+		text-align: center;
+	}
+
+    #banner {
+    /* Tus propiedades originales intactas */
+    background-attachment: scroll, fixed;
+    background-color: #666;
+    background-image: url("/images/overlay.jpg"), url("../../images/hero_img22.jpg");
+    background-position: top left, center center;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
+    color: #fff;
+    padding: 16em 0 24em 0;
+    text-align: center;
+    
+    /* Agregado para el contenedor del video */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Propiedades del video para cubrir el banner */
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; 
+    transition: opacity 0.5s ease; /* Difuminado al terminar */
+}
+
+/* Asegura que el texto y botones destaquen sobre el video */
+#banner h2, 
+#banner .banner-badge-container, 
+#banner .actions {
+    position: relative;
+    z-index: 1;
+}
+
+/* Para pantallas grandes (escritorio/tablets) */
+body.landing #banner,
+body.is-touch #banner,
+#banner {
+    padding-top: 9em !important; /* Originalmente estaba en 12em. Redúcelo para que todo suba. */
+}
+
+/* Para celulares */
+@media screen and (max-width: 480px) {
+    body.landing #banner,
+    body.is-touch #banner,
+    #banner {
+        padding-top: 3em !important; /* Originalmente estaba en 6em. */
+    }
+}
+
+
+
+
+/* Estado inicial: El texto es transparente y está ligeramente abajo */
+#banner-text {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+    position: relative;
+    z-index: 1; /* Asegura que esté por encima de la imagen/video */
+}
+
+/* Estado final: Esta clase la inyectará JavaScript cuando termine el video */
+#banner-text.show-text {
+    opacity: 1;
+    transform: translateY(0);
+}
