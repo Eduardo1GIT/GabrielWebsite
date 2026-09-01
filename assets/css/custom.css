@@ -323,3 +323,9 @@ body.is-touch #banner,
     opacity: 1;
     transform: translateY(0);
 }
+
+
+
+.box .parrafo {
+    font-size: 1.3em !important;
+}
