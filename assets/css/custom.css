@@ -479,3 +479,56 @@ body.landing .image-interactive video.video-mobile {
 }
 
 
+/* =========================================================
+   FIX DEFINITIVO: DESPEJE Y ALTURA DE ICONOS DEL FOOTER
+   ========================================================= */
+
+/* 1. Dar margen y despeje a la última sección de eventos */
+body.landing #main {
+    padding-bottom: 3rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* 2. Asegurar que el contenedor del footer no corte nada y tenga espacio arriba */
+#footer {
+    position: relative !important;
+    clear: both !important;
+    overflow: visible !important;
+    margin-top: 3rem !important;
+    padding-top: 4.5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+/* 3. Corregir el posicionamiento de los iconos para que no queden cortados */
+#footer .icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto 2rem auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+#footer .icons li {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 0.8em !important;
+    overflow: visible !important;
+}
+
+#footer .icons a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 0 !important; /* Anula el margin-top de main.css que corta la parte superior */
+    line-height: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+#footer .icons a:before {
+    display: block !important;
+    line-height: 1 !important;
+    font-size: 2rem !important;
+}
