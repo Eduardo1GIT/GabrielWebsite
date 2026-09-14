@@ -25,6 +25,8 @@ header.major .title-dynamic {
     
     header.major .title-dynamic {
         font-size: 2.25em;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
     }
 }
 
@@ -195,9 +197,9 @@ body.is-touch #banner,
 
 /* 1. Forzar al contenedor principal a subir por completo sin dejar aire */
 body.landing #main {
-    margin-top: -14em !important;
+    margin-top: 2em!important;
     padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-bottom: 2em!important;
 }
 
 /* 2. Quitar el fondo blanco, bordes y sombras de la tarjeta contenedora del video */
@@ -223,15 +225,15 @@ body.landing .image-interactive {
 
 /* 4. Asegurar que el video ocupe el ancho completo de su bloque sin franjas */
 body.landing .image-interactive video {
-    display: block !important;
+    display:block !important;
     width: 100% !important;
-    height: auto !important;
+    height: 75vh ;
     margin: 0 !important;
     padding: 0 !important;
 }
 
 /* 5. Ajuste estricto para resoluciones móviles y tablets */
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 650px) {
     body.landing #main {
         margin-top: 0 !important;
         padding-top: 0 !important;
@@ -244,13 +246,14 @@ body.generic-page {
 	#banner.generic {
 		background-attachment: scroll, fixed;
 		background-color: #666;
-		background-image: url("/images/overlay.jpg"), url("../../images/galeria.png");
+		background-image: url("/images/overlay.jpg"), url("../../images/galeria.png") !important;
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
 		color: #fff;
 		padding: 16em 0 24em 0;
 		text-align: center;
+        margin-bottom: 2em !important;
 	}
 
     #banner {
@@ -308,7 +311,6 @@ body.is-touch #banner,
 
 
 
-
 /* Estado inicial: El texto es transparente y está ligeramente abajo */
 #banner-text {
     opacity: 0;
@@ -329,3 +331,151 @@ body.is-touch #banner,
 .box .parrafo {
     font-size: 1.3em !important;
 }
+
+
+
+/* =========================================================
+   CONTROL DE TAMAÑO DEL BANNER EN PANTALLAS GRANDES (> 750px)
+   ========================================================= */
+@media screen and (min-width: 651px) {
+    body.landing #banner,
+    #banner {
+        /* 1. Controla la altura máxima para que no se estire sin límite */
+        max-height: 85vh; /* Ocupa como máximo el 85% del alto de la pantalla */
+        min-height: 400px;
+        
+        /* 2. Reducimos el relleno excesivo (antes tenías 36em abajo) */
+        padding-top: 8em !important;
+        padding-bottom: 10em !important;
+
+        /* 3. Ajuste de la imagen para que no haga zoom desmedido */
+        background-attachment: scroll, scroll !important; /* Desactiva el fixed que agranda la imagen */
+        background-size: auto, cover !important;
+        background-position: top left, center 20% !important; /* Ajusta el encuadre (sube o baja el foco) */
+    }
+
+    /* Ajustar el espaciado del botón para que no deforme la caja */
+    #banner .actions {
+        margin-bottom: 2em !important;
+    }
+}
+
+
+/* =========================================================
+   SINGLE UNIFIED BANNER CONTROLLER
+   ========================================================= */
+
+/* Base (Mobile-First) */
+body.landing #banner,
+#banner {
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #0b0b0e !important;
+    background-image: url("/images/overlay.jpg"), url("../../images/secc3.png") !important;
+    background-repeat: repeat, no-repeat !important;
+    background-attachment: scroll, scroll !important;
+    background-size: auto, cover !important;
+    background-position: center top !important;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    padding: 3em 1.5em !important;
+    min-height: 695px !important;
+    max-height: 600px !important;
+    height: auto !important;
+}
+
+/* Video Frame Setup */
+/* Configuración compartida de ambos videos */
+#banner .hero-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    z-index: 0 !important;
+    transition: opacity 0.5s ease;
+}
+
+/* 1. Por defecto (Móviles < 650px) */
+#banner .hero-video-desktop {
+    display: none !important;
+}
+#banner .hero-video-mobile {
+    display: block !important;
+}
+
+/* 2. Desktop y Tablets (>= 650px) */
+@media screen and (min-width: 650px) {
+    #banner .hero-video-desktop {
+        display: block !important;
+    }
+    #banner .hero-video-mobile {
+        display: none !important;
+    }
+}
+
+/* Desktop & Tablets (Width >= 650px) */
+@media screen and (min-width: 650px) {
+    body.landing #banner,
+    #banner {
+        height: 100vh !important;
+        max-height: 100vh !important;
+        min-height: 420px !important;
+        padding: 0 2em !important;
+        background-position: center 25% !important;
+    }
+
+    #banner h2 {
+        font-size: 3.2em !important;
+    }
+
+    #banner p.banner-highlight {
+        font-size: 1.6em !important;
+    }
+
+    #banner .actions {
+        margin: 1.5em 0 0 0 !important;
+    }
+} /* <--- AQUÍ FALTABA ESTA LLAVE DE CIERRE */
+
+
+/* =========================================================
+   CONTROL DE VIDEOS INTERACTIVOS (MÓVIL VS DESKTOP)
+   ========================================================= */
+
+/* Estilos comunes compartidos */
+body.landing .image-interactive video {
+    width: 100% !important;
+    height: 75vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover;
+}
+
+/* 1. Menores a 650px (Móvil) */
+body.landing .image-interactive video.video-desktop {
+    display: none !important;
+}
+
+body.landing .image-interactive video.video-mobile {
+    display: block !important;
+}
+
+/* 2. Pantallas de 650px o más (Desktop) */
+@media screen and (min-width: 650px) {
+    body.landing .image-interactive video.video-desktop {
+        display: block !important;
+    }
+
+    body.landing .image-interactive video.video-mobile {
+        display: none !important;
+    }
+}
+
+
