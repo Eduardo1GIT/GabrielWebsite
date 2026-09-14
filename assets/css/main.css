@@ -3347,8 +3347,8 @@
 /* Footer */
 
 	#footer {
-		background: #f0f0f0;
-		padding: 4em 0 6em 0;
+		background: #00020ade;
+		padding: 4em 0 6em 0 !important;
 		text-align: center;
 	}
 
